@@ -38,7 +38,7 @@
     <div class="container"  role="main">
       <% flash.each do |key, value| %>
         <% binding.pry %>
-        <div class="alert alert-key">
+        <div class="<%= flash_class(key) %>">
           <%= value %>
         </div>
       <% end %>
