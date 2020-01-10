@@ -8,10 +8,10 @@
 <ul>
   <% @attractions.each do |attraction| %>
     <li>
-      <%= attraction.name %> - Tickets: <%= attraction.tickets %> - Min. Height: <%= attraction.min_height %> - <%= link_to "Go on #{attraction.name}", attraction_path(attraction) %>
+      <%= attraction.name %> - Tickets: <%= attraction.tickets %> - Min. Height: <%= attraction.min_height %>
       <ul>
         <li>
-          Total Rides: <%= attraction.rides.count %>
+          <%= link_to "Go on #{attraction.name}", attraction_path(attraction) %>
         </li>
       </ul>
     </li>
