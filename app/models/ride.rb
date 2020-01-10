@@ -8,14 +8,14 @@ class Ride < ActiveRecord::Base
       {:notice => "Sorry. You do not have enough tickets to ride the #{self.attraction.name}. You are not tall enough to ride the #{self.attraction.name}."}
     elsif not_tall_enough?
       # accounts for the user not being tall enough
-      {"notice": "Sorry. You are not tall enough to ride the #{self.attraction.name}."}
+      {:notice => "Sorry. You are not tall enough to ride the #{self.attraction.name}."}
     elsif not_enough_tickets?
       # accounts for the user not having enough tickets
-      {"notice": "Sorry. You do not have enough tickets to ride the #{self.attraction.name}."}
+      {:notice => "Sorry. You do not have enough tickets to ride the #{self.attraction.name}."}
     else # updates the user's ticket number, the user's nausea & user's happiness
       self.user.update(tickets: remaining_tickets, nausea: new_nausea, happiness: new_happiness)
       self.save
-      {"success": "Thanks for riding the #{self.attraction.name}!"}
+      {:success => "Thanks for riding the #{self.attraction.name}!"}
     end
   end
 
