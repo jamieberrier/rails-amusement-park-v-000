@@ -1,20 +1,20 @@
 <h1>Sign Up for Amusement Park</h1>
 
 <%= form_for @user, html: {class: "form"} do |f| %>
-  <%= f.label :name %>:<br>
-  <%= f.text_field :name %><br><br>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
 
-  <%= f.label "Height (in inches)" %>:<br>
-  <%= f.text_field :height %><br><br>
+  <%= f.label "Height (in inches)" %>
+  <%= f.text_field :height %>
 
-  <%= f.label "How happy are you? (1-5 scale)" %>:<br>
-  <%= f.text_field :happiness %><br><br>
+  <%= f.label "How happy are you? (1-5 scale)" %>
+  <%= f.text_field :happiness %>
 
-  <%= f.label "How nauseous are you? (1-5 scale)" %>:<br>
-  <%= f.text_field :nausea %><br><br>
+  <%= f.label "How nauseous are you? (1-5 scale)" %>
+  <%= f.text_field :nausea %>
 
-  <%= f.label "How many dollars are in your pocket?" %>:<br>
-  <%= f.text_field :tickets %><br><br>
+  <%= f.label "How many dollars are in your pocket?" %>
+  <%= f.text_field :tickets %>
 <!-- object_name.check_box(method, options = {}, checked_value = "1", unchecked_value = "0") -->
   <%= f.label "Check box if you are a theme park owner" %>:
   <%= f.check_box(:admin, :value => :admin) %><br><br>
