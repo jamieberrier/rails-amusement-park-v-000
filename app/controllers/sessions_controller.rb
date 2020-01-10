@@ -4,12 +4,11 @@ class SessionsController < ApplicationController
 
   def create
     @user = User.find_by(name: params[:user][:name])
-    #binding.pry
     # try is an ActiveSupport method. object.try(:some_method) means if object != nil then object.some_method else nil end.
-    authenticated = @user.try(:authenticate, params[:user][:password])
-    # Users should not be able to log in if they enter an incorrect password. Just redirect them back to the login page.
+    #authenticated = @user.try(:authenticate, params[:user][:password])
 
-    if authenticated
+    # Users should not be able to log in if they enter an incorrect password. Just redirect them back to the login page.
+    if @user.authenticate(params[:user][:password])
       session[:user_id] = @user.id
       redirect_to user_path(@user.id)
     else
