@@ -4,7 +4,7 @@ class RidesController < ApplicationController
   def create
     @ride = Ride.new(user_id: params[:user_id], attraction_id: params[:attraction_id])
     @result = @ride.take_ride
-    binding.pry
+    binding.pry    
     flash[@result.keys[0].to_s] = @result.values[0]
     redirect_to user_path(current_user.id)
   end
