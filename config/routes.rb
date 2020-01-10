@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   resources :users
-  resources :attractions
 
   resources :attractions do
     # nested resource for songs
