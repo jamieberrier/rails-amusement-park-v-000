@@ -8,6 +8,7 @@
     <br>
   </div>
 </div>
+<div class="center">
     <%= link_to "See All Attractions", attractions_path %>
     <br><br>
     <% if current_user.is_admin? %>
@@ -19,3 +20,4 @@
         <%= submit_tag "Go on this ride" %>
       <% end %>
     <% end %>
+  </div>
