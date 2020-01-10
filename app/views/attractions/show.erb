@@ -1,9 +1,11 @@
-<h1><%= @attraction.name %></h1>
-<h3>Tickets required: <%= @attraction.tickets %></h3>
-<h3>Minimum height: <%= @attraction.min_height %></h3>
-<h4>Nausea Rating: <%= @attraction.nausea_rating %></h4>
-<h4>Happiness Rating: <%= @attraction.happiness_rating %></h4>
-<h4>Total Number of Rides: <%= @attraction.rides.count %></h4>
+<div class="center">
+  <h1><%= @attraction.name %></h1>
+  <h3>Tickets required: <%= @attraction.tickets %></h3>
+  <h3>Minimum height: <%= @attraction.min_height %></h3>
+  <h4>Nausea Rating: <%= @attraction.nausea_rating %></h4>
+  <h4>Happiness Rating: <%= @attraction.happiness_rating %></h4>
+  <h4>Total Number of Rides: <%= @attraction.rides.count %></h4>
+</div>
 
 <%= link_to "Back to Attractions", attractions_path %><br>
 
