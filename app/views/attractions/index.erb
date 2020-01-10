@@ -6,12 +6,14 @@
   <%= link_to "New Attraction", new_attraction_path %>
 <% else %>
   <table class=table>
-    <tr>
-      <th class=thead-light>Name</th>
-      <th class=thead-light>Tickets</th>
-      <th class=thead-light>Min. Height</th>
-      <th class=thead-light>Go On Ride</th>
-    </tr>
+    <thead>
+      <tr>
+        <th class=thead-light>Name</th>
+        <th class=thead-light>Tickets</th>
+        <th class=thead-light>Min. Height</th>
+        <th class=thead-light>Go On Ride</th>
+      </tr>
+    </thead>
     <% @attractions.each do |attraction| %>
       <tr>
         <td><%= attraction.name %></td>
