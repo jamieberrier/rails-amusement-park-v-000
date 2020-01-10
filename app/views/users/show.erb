@@ -3,7 +3,7 @@
     <h1><%= current_user.name %></h1>
 
     <% if current_user.is_admin? %>
-      <p>ADMIN</p>
+      <h2>ADMIN</h2>
     <% else %>
       <p>Mood: <%= current_user.mood %></p>
       <p>Tickets: <%= current_user.tickets %></p>
