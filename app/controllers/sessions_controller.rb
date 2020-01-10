@@ -8,7 +8,8 @@ class SessionsController < ApplicationController
     # try is an ActiveSupport method. object.try(:some_method) means if object != nil then object.some_method else nil end.
     #authenticated = @user.try(:authenticate, params[:user][:password])
     if @user.nil?
-
+      flash[:error] = "Select Name From Dropdown Menu"
+      redirect_to signin_path
     else
     # Users should not be able to log in if they enter an incorrect password. Just redirect them back to the login page.
       if @user.authenticate(params[:user][:password])
