@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
     # Users should not be able to log in if they enter an incorrect password. Just redirect them back to the login page.
     #flash[:error] = "Invalid Log In Credentials"
 
-    return redirect_to signin_path unless authenticated
+    redirect_to signin_path unless authenticated
 
     session[:user_id] = @user.id
     redirect_to user_path(@user.id)
