@@ -1,29 +1,31 @@
-<h1>All Attractions</h1>
-<% if current_user.is_admin? %>
-  <% @attractions.each do |attraction| %>
-    <li><%= link_to "Show #{attraction.name}", attraction_path(attraction) %></li>
-  <% end %>
-  <br>
-  <%= link_to "New Attraction", new_attraction_path %>
-<% else %>
-  <table class="table table-bordered table-hover">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Tickets</th>
-        <th>Min. Height</th>
-        <th>Go On Ride</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% @attractions.each do |attraction| %>
+<div class="center">
+  <h1>All Attractions</h1>
+  <% if current_user.is_admin? %>
+    <% @attractions.each do |attraction| %>
+      <li><%= link_to "Show #{attraction.name}", attraction_path(attraction) %></li>
+    <% end %>
+    <br>
+    <%= link_to "New Attraction", new_attraction_path %>
+  <% else %>
+    <table class="table table-bordered table-hover">
+      <thead>
         <tr>
-          <td><%= attraction.name %></td>
-          <td><%= attraction.tickets %></td>
-          <td><%= attraction.min_height %></td>
-          <td><%= link_to "Go on #{attraction.name}", attraction_path(attraction) %></td>
+          <th>Name</th>
+          <th>Tickets</th>
+          <th>Min. Height</th>
+          <th>Go On Ride</th>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
-<% end %>
+      </thead>
+      <tbody>
+        <% @attractions.each do |attraction| %>
+          <tr>
+            <td><%= attraction.name %></td>
+            <td><%= attraction.tickets %></td>
+            <td><%= attraction.min_height %></td>
+            <td><%= link_to "Go on #{attraction.name}", attraction_path(attraction) %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
+</div>
