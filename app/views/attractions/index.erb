@@ -1,7 +1,6 @@
 <div class="info">
   <h1>All Attractions</h1>
   <% if current_user.is_admin? %>
-
     <% @attractions.each do |attraction| %>
       <li><%= link_to "Show #{attraction.name}", attraction_path(attraction) %></li>
     <% end %>
@@ -9,7 +8,6 @@
     <div class="center">
       <%= link_to "New Attraction", new_attraction_path %>
     </div>
-
   <% else %>
     <table class="table table-bordered table-hover">
       <thead>
