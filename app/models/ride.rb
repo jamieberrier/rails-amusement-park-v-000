@@ -5,17 +5,17 @@ class Ride < ActiveRecord::Base
   def take_ride
     if not_enough_tickets? && not_tall_enough?
       # accounts for the user not being tall enough and not having enough tickets
-      @result = {:error => "Sorry. You do not have enough tickets to ride the #{self.attraction.name}. You are not tall enough to ride the #{self.attraction.name}."}
+      {:error => "Sorry. You do not have enough tickets to ride the #{self.attraction.name}. You are not tall enough to ride the #{self.attraction.name}."}
     elsif not_tall_enough?
       # accounts for the user not being tall enough
-      @result = {:alert => "Sorry. You are not tall enough to ride the #{self.attraction.name}."}
+      {:alert => "Sorry. You are not tall enough to ride the #{self.attraction.name}."}
     elsif not_enough_tickets?
       # accounts for the user not having enough tickets
-      @result = {:alert => "Sorry. You do not have enough tickets to ride the #{self.attraction.name}."}
+      {:alert => "Sorry. You do not have enough tickets to ride the #{self.attraction.name}."}
     else # updates the user's ticket number, the user's nausea & user's happiness
       self.user.update(tickets: remaining_tickets, nausea: new_nausea, happiness: new_happiness)
       self.save
-      @result = {:success => "Thanks for riding the #{self.attraction.name}!"}
+      {:success => "Thanks for riding the #{self.attraction.name}!"}
     end
   end
 
