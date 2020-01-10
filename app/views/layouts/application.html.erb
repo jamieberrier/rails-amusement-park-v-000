@@ -19,7 +19,7 @@
           </button>
         <a class="navbar-brand" href="<%= root_url %>"/>Home</a>
         <% if session[:user_id] %>
-          <a class="navbar-brand" href="/users/<%= current_user.id %>"><%= current_user.name %> profile</a>
+          <a class="navbar-brand" href="/users/<%= current_user.id %>"><%= current_user.name %> Profile</a>
           <a class="navbar-brand" rel="nofollow" data-method="post" href="/logout">Log Out</a>
         <% else %>
           <a class="navbar-brand" href="/users/new">Sign Up</a>
