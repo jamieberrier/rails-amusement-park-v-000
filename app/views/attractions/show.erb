@@ -1,13 +1,10 @@
 <div class="info">
   <div class="center">
-    <div class="center">
       <h1><u><%= @attraction.name %></u></h1>
       <h3>Tickets Required: <%= @attraction.tickets %></h3>
       <h3>Minimum Height: <%= @attraction.min_height %></h3>
       <h4>Nausea Rating: <%= @attraction.nausea_rating %> | Happiness Rating: <%= @attraction.happiness_rating %></h4>
       <h4>Total Number of Rides: <%= @attraction.rides.count %></h4>
-    </div>
-  </div>
   <br>
   <%= link_to "See All Attractions", attractions_path %>
   <br><br>
@@ -20,4 +17,5 @@
       <%= submit_tag "Go on this ride" %>
     <% end %>
   <% end %>
+  </div>
 </div>
