@@ -14,13 +14,15 @@
         <th>Go On Ride</th>
       </tr>
     </thead>
-    <% @attractions.each do |attraction| %>
-      <tr>
-        <td><%= attraction.name %></td>
-        <td><%= attraction.tickets %></td>
-        <td><%= attraction.min_height %></td>
-        <td><%= link_to "Go on #{attraction.name}", attraction_path(attraction) %></td>
-      </tr>
-    <% end %>
+    <tbody>
+      <% @attractions.each do |attraction| %>
+        <tr>
+          <td><%= attraction.name %></td>
+          <td><%= attraction.tickets %></td>
+          <td><%= attraction.min_height %></td>
+          <td><%= link_to "Go on #{attraction.name}", attraction_path(attraction) %></td>
+        </tr>
+      <% end %>
+    </tbody>
   </table>
 <% end %>
