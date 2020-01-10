@@ -13,12 +13,14 @@
     <%= f.label "How happy are you? (1-5 scale)" %>
     <%= f.text_field :happiness %>
   </div>
-
-  <%= f.label "How nauseous are you? (1-5 scale)" %>
-  <%= f.text_field :nausea %>
-
-  <%= f.label "How many dollars are in your pocket?" %>
-  <%= f.text_field :tickets %>
+  <div class="form-group">
+    <%= f.label "How nauseous are you? (1-5 scale)" %>
+    <%= f.text_field :nausea %>
+  </div>
+  <div class="form-group">
+    <%= f.label "How many dollars are in your pocket?" %>
+    <%= f.text_field :tickets %>
+  </div>
 <!-- object_name.check_box(method, options = {}, checked_value = "1", unchecked_value = "0") -->
   <%= f.label "Check box if you are a theme park owner" %>:
   <%= f.check_box(:admin, :value => :admin) %><br><br>
