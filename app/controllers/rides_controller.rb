@@ -5,7 +5,7 @@ class RidesController < ApplicationController
     @ride = Ride.new(user_id: params[:user_id], attraction_id: params[:attraction_id])
     binding.pry
     @message = @ride.take_ride
-    flash[:notice] = @message
+    flash[@message.keys] = @message.values
     redirect_to user_path(current_user.id)
   end
 end
