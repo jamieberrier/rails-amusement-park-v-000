@@ -15,7 +15,7 @@ class Ride < ActiveRecord::Base
     else # updates the user's ticket number, the user's nausea & user's happiness
       self.user.update(tickets: remaining_tickets, nausea: new_nausea, happiness: new_happiness)
       self.save
-      "Thanks for riding the #{self.attraction.name}!"
+      {"success": "Thanks for riding the #{self.attraction.name}!"}
     end
   end
 
