@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       redirect_to user_path(@user.id)
     else
-      flash[:error] = "Invalid Log In Credentials"
+      flash[:error] = "Invalid Password"
       redirect_to signin_path
     end
   end
