@@ -5,7 +5,7 @@ class Ride < ActiveRecord::Base
   def take_ride
     if not_enough_tickets? && not_tall_enough?
       # accounts for the user not being tall enough and not having enough tickets
-      {"error": "Sorry. You do not have enough tickets to ride the #{self.attraction.name}. You are not tall enough to ride the #{self.attraction.name}."}
+      {":error": "Sorry. You do not have enough tickets to ride the #{self.attraction.name}. You are not tall enough to ride the #{self.attraction.name}."}
     elsif not_tall_enough?
       # accounts for the user not being tall enough
       {"notice": "Sorry. You are not tall enough to ride the #{self.attraction.name}."}
