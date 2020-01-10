@@ -26,9 +26,10 @@
     <%= f.label "Check box if you are a theme park owner" %>:
     <%= f.check_box(:admin, :value => :admin) %>
   </div>
-
-  <%= f.label :password %>:<br>
-  <%= f.password_field :password %><br><br>
+  <div class="form-group">
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
 
   <%= f.submit "Create User" %>
 <% end %>
