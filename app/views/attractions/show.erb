@@ -8,10 +8,7 @@
     <h4>Total Number of Rides: <%= @attraction.rides.count %></h4>
 
     <%= link_to "Back to Attractions", attractions_path %><br>
-  </div>
-</div>
-<div class="center">
-  <div class="info">
+  
     <% if current_user.is_admin? %>
       <%= link_to "Edit Attraction", edit_attraction_path(@attraction) %>
     <% else %>
