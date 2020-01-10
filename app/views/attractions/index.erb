@@ -6,21 +6,21 @@
   <%= link_to "New Attraction", new_attraction_path %>
 <% else %>
   <table>
-    <tr>
-      <th>Name</th>
-      <th>Tickets</th>
-      <th>Min. Height</th>
-      <th>Go On Ride</th>
-    </tr>
-    <tr>
-      <td><%= attraction.name %></td>
-      <td><%= attraction.tickets %></td>
-      <td><%= attraction.min_height %></td>
-      <td><%= link_to "Go on #{attraction.name}", attraction_path(attraction) %></td>
-    </tr>
+    <% @attractions.each do |attraction| %>
+      <tr>
+        <th>Name</th>
+        <th>Tickets</th>
+        <th>Min. Height</th>
+        <th>Go On Ride</th>
+      </tr>
+      <tr>
+        <td><%= attraction.name %></td>
+        <td><%= attraction.tickets %></td>
+        <td><%= attraction.min_height %></td>
+        <td><%= link_to "Go on #{attraction.name}", attraction_path(attraction) %></td>
+      </tr>
+    <% end %>
   </table>
-
-
 
 <ul>
   <% @attractions.each do |attraction| %>
