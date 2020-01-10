@@ -3,6 +3,7 @@ class RidesController < ApplicationController
 
   def create
     @ride = Ride.new(user_id: params[:user_id], attraction_id: params[:attraction_id])
+    binding.pry
     @message = @ride.take_ride
     flash[:notice] = @message
     redirect_to user_path(current_user.id)
